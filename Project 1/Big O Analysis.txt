@@ -1,0 +1,14 @@
+Task 0:
+O(1) as there is no looping statement used.
+
+Task 1:
+O(n) as there is a for loop used.
+
+Task 2:
+O(n) as there is a for loop used.
+
+Task 3:
+O(nlogn) as sorted()is used.
+
+Task 4:
+O(nlogn) as sort()is used.
