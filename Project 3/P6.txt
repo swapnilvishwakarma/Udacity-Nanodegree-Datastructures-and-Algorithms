@@ -1,0 +1,8 @@
+We can solve the problem with a single transversal and two placeholders, as reference for min and max values.
+
+
+Time Complexity:
+O(n), in this case, we perform a single transverse of the whole input.
+
+Space Complexity:
+O(1) as we have a pair of pointers, it is independent from input size.

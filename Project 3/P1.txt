@@ -1,0 +1,7 @@
+This algorithm is implemented using the variance of the binary search. This is achieved by dividing the search space in two parts and checking at each time if the mid point power of 2 is bigger/smaller than the given number. Also, in order to optimize it, the fact that the square root of a natural number (starting from 2) is half or less, thus giving us a speed boost by starting with end = number // 2.
+
+Time Complexity:
+O(log(n)) as we have to transverse the hypothetically ordered natural's number list by using a Binary Search approach.
+
+Space Complexity:
+O(1) as it is independent of the input.

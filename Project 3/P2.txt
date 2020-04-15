@@ -1,0 +1,7 @@
+The principle employed in this algorithms is based directly in the binary search algorithms.
+
+Time Complexity:
+O(log(n)) as the number of iterations we perform, i.e. recursive depth, follows the rule of recursive_depth^2 = n. Thus if we isolate the number of iterations in relation to the input space (n), we obtain log(n) = recursive_depth.
+
+Space Complexity:
+O(1) as it is independent of the input.

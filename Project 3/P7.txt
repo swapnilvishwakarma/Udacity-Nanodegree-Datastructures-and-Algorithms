@@ -1,0 +1,8 @@
+It is similar to problem 5, except for the edge cases, like "root handler", and working with a hierarchy of web pages instead of strings. This problem is focused on the development of the of a trie a data structure derived from a tree, suited for a good ratio between time and space complexity.
+
+
+Time Complexity:
+O(n), for the trie, searching and inserting from a trie depends on the length of the path n that is being searched for, inserted.
+
+Space Complexity:
+O(n), for a trie, the worst case would be when we have a path (or paths) with no common folders between them and hence having a node for each path block (path between forward slashes).

@@ -1,0 +1,8 @@
+By using several pointers, it is possible on a single transverse to properly order the provided array.
+
+
+Time Complexity:
+O(n) as while loop is used.
+
+Space Complexity:
+O(1), due to the non usage of auxiliary tables (only a few pointers, excluding the input space).

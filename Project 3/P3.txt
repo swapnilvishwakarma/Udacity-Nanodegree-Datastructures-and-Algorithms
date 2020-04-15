@@ -1,0 +1,8 @@
+It is a merge sort algorithm, except for the particular treatment it gives to the comparison of results coming from the previous recursion, if we are on the first level of the recursion. In this case, it does the comparison, as usual, but then starts saving the results on alternative lists, which are then returned as the results.
+The usage of this alternative list saving is due to the fact that having the list perfectly sorted, if we start from the index[0] and give alternatively a value to each list, occupying this value an increasing digit position, we always obtain a combination that satisfies the condition of having a maximum sum of two numbers and maximum a digit of difference between them.
+
+Time Complexity:
+O(n*log(n)) as the base of the algorithm is the merge sort. 
+
+Space Complexity:
+O(n) we have always arrays that amount to the length of the input array.
