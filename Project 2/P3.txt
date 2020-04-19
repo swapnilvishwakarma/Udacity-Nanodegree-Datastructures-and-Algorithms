@@ -1,0 +1,14 @@
+A min heap is used to allow for easy merging of the frequency nodes.
+heapq library is used to make the addition and removal of nodes easier.
+
+The time complexity of:
+1) encode():
+   O(nlogn) as the following functions result in a time complexity of nlogn; make_frequency_dict takes O(n) time, min_heapify_dict takes O(n) time, merge_nodes takes    O(logn), make_codes takes O(n), get_encoded_text takes O(n).
+2) decode():
+   O(n) since a for loop is used in encoded_text.
+
+The space complexity of:
+1) encode():
+    O(n) where n is the size of the string. There is a linear space complexity.
+2) decode():
+   O(1) as only one variable is used.

@@ -1,0 +1,6 @@
+Recursion because it is not known to us how deep the file structure is.
+
+The time complexity of find_files() is O(n) as it is not known to us how deep the file structure is.
+The space complexity of find_files() is O(n) as a variable is allocated for the number of files in the directory.
+
+The space complexity of recursive call stack is proportinal to maximum depth of recursion tree generated. So the computation will grow linearly and the space complexity will be O(n).

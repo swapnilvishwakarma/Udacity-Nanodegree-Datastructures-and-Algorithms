@@ -1,0 +1,14 @@
+Hash map is used to store the cache values.
+Doubly linked list to keep track of the most recently used values and size.
+
+Time complexity of:
+1) get()
+   O(1) as there is no loop used.
+2) set()
+   O(1) as there is no loop used.
+
+Space complexity of:
+1) get()
+   O(1) as only one variable is allocated.
+2) set()
+   O(n) since the dictionary is as large as the amount of keys.

@@ -1,0 +1,15 @@
+By making use of Pythons set() data structure, we can easily add objects from each respective linked list and then either unite them in the union function or find the intersection with the intersection function.
+
+To calculate the intersecion we use a hash map with the key being the node value and the value being the number of occurences. We insert the hash map with the first list and then iterate through the second to find matches.
+
+Time complexity of:
+1) union:
+   O(n) as the function has for loop.
+2) intersection:
+   O(n) as the function has for loop.
+
+Space complexity of:
+1) union:
+   O(n) as each variable in the list is allocated to a new variable.
+2) intersection:
+   O(n) as each variable in the list is allocated to a new variable.

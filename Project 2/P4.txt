@@ -1,0 +1,12 @@
+Recursion is used because we don't know how many groups deep we will have to search.
+The 'or' operator is used on the output so that it only takes one call to report True for the output to be True.
+
+The time complextity of:
+1) is_user_in_group():
+   O(n) as two separate for loops that are used.
+
+The space complexity of:
+1) is_user_in_group():
+   O(1) as only one variable is used.
+
+The space complexity of recursive call stack is proportinal to maximum depth of recursion tree generated. So the space complexity will be O(n).
