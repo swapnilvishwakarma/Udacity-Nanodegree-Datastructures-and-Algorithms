@@ -4,10 +4,10 @@ import datetime
 
 class Block:
 
-    def __init__(self, data, previous_hash):
+    def __init__(self, data):
         self.timestamp = datetime.datetime.now()
         self.data = data
-        self.previous_hash = previous_hash
+        self.previous_hash = None
         self.hash = self.calculate_hash()
 
     def calculate_hash(self):
@@ -32,7 +32,7 @@ class Blockchain:
     def add_block(self, value):
         data = value
         previous_hash = self.current_block.hash if self.current_block else 0
-        self.current_block = Block(data, previous_hash)
+        self.current_block = Block(data)
 
 
 BlockChain = Blockchain()
