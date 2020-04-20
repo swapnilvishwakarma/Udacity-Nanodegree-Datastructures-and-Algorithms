@@ -3,10 +3,8 @@ The 'or' operator is used on the output so that it only takes one call to report
 
 The time complextity of:
 1) is_user_in_group():
-   O(n) as two separate for loops that are used.
+   O(mn) where m-> depth and n-> number of users.
 
 The space complexity of:
 1) is_user_in_group():
-   O(1) as only one variable is used.
-
-The space complexity of recursive call stack is proportinal to maximum depth of recursion tree generated. So the space complexity will be O(n).
+   O(mn) since in the worst case, we could have n users, and have to search in full depth being m.

@@ -1,9 +1,10 @@
-Here doubly linked list is used to track the previous and the next block. Since a single block contains the hash of previous and next block along with its own data, therefore any tampering with any of the block changes the entire hashing. And this hash info is also quite unique as it contains the time stamp in it.
+Here I used hashlib to calculate the hash for all data. Since a single block contains the hash of previous and next block along with its own data, therefore any tampering with any of the block changes the entire hashing. And this hash info is also quite unique as it contains the time stamp in it.
+add_block to set the previous hash of the first block added to 0. In all other cases, the block to be added retrieves the previous block’s hash, which links them together. 
 
 The time complextity of:
 1) add_block is:
-   O(1) as the function occurs in constant time.
+   O(1) as the function occurs in constant time since all we are doing is adding blocks with data(statements).
 
 The space complexity of:
 1) add_block is:
-   O(1) as the function allocates a single variable every time.
+   O(n) since I need to store all blocks in a blockchain list.

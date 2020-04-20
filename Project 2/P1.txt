@@ -1,14 +1,14 @@
-Hash map is used to store the cache values.
-Doubly linked list to keep track of the most recently used values and size.
+I used three data structures namely linked list nodes, queues, and a hashmap. Hash map is used to store the cache values. I used the queue as the data structure to store the entry records of nodes that were added to and edited in the hashmap. Also, entry records were made in the queue whenever node values were retrieved from the hashmap with the get() function. When there was an overflow in the hashmap, the entry record queue was queried to determine which node was last used in the hashmap.
+Querying the queue and removing the least recently used node from the hashmap took O(1) time in the average case, but varied if there was history of a lot of editing or retrieval of nodes in the hashmap.
 
 Time complexity of:
 1) get()
-   O(1) as there is no loop used.
+   O(1) as I stored all the cache entries in the hashmap.
 2) set()
-   O(1) as there is no loop used.
+   O(1) as I stored all the cache entries in the hashmap.
 
 Space complexity of:
 1) get()
-   O(1) as only one variable is allocated.
+   O(1) as I stored all the cache entries in the LRU hashmap.
 2) set()
-   O(n) since the dictionary is as large as the amount of keys.
+   O(n) as I stored all the cache entries in the LRU hashmap.

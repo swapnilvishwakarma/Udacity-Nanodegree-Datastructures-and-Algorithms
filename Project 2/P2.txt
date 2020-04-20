@@ -1,6 +1,7 @@
-Recursion because it is not known to us how deep the file structure is.
+Recursion is used because it is not known to us how deep the file structure is. And try-except is used to keep the program running even if test directory is not found.
 
-The time complexity of find_files() is O(n) as it is not known to us how deep the file structure is.
-The space complexity of find_files() is O(n) as a variable is allocated for the number of files in the directory.
+The time complexity of find_files():
+O(mn) because of the loop over all files includes number of sub-directories m, and number of files per directory n.
 
-The space complexity of recursive call stack is proportinal to maximum depth of recursion tree generated. So the computation will grow linearly and the space complexity will be O(n).
+The space complexity of find_files():
+O(mn)since in the worse case, we could have n files to hold, and m sub-directories to search.

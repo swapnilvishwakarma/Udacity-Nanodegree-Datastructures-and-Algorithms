@@ -4,70 +4,96 @@ import datetime
 
 class Block:
 
-    def __init__(self, data):
-        self.timestamp = datetime.datetime.now()
+    def __init__(self, data, previous_hash=0):
+        """
+        Creates the Block on the Blockchain using SHA-256 hash and Greenwich Mean Time
+        :param data: String of transaction data
+        :param previous_hash: Connection to previous block
+        """
+        self.timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M:%S %m-%d-%y")
         self.data = data
-        self.previous_hash = None
-        self.hash = self.calculate_hash()
+        self.previous_hash = previous_hash
+        self.hash = self.calc_hash()
 
-    def calculate_hash(self):
+    def calc_hash(self):
+        """
+        Calculates hash for information we want to store in the blockchain
+        e.g. transaction time, data, previous chain, etc.
+        :return: SHA-256 Hash
+        """
+
+        # Create SHA-256 Hash Object
         sha = hashlib.sha256()
 
+        # Encode data
         hash_str = (str(self.timestamp) + str(self.data) + str(self.previous_hash)).encode('utf-8')
 
+        # Feed encoded byte-like object to sha
         sha.update(hash_str)
 
+        # Return string representation of SHA-256 Hash Object
         return sha.hexdigest()
 
-    def __str__(self):
-        return '\nTimestamp: {}\nData: {}\nPrevious Hash: {}\nHash: {}'.format(self.timestamp, self.data,
-                                                                               self.previous_hash, self.hash)
+    def __repr__(self):
+        s = ''
+        s += "Timestamp: " + self.timestamp + "\n"
+        s += "Data: " + self.data + "\n"
+        s += "Current Hash: " + str(self.hash) + "\n"
+        s += "Previous Hash: " + str(self.previous_hash) + "\n"
+        return s
 
 
-class Blockchain:
+class BlockChain:
 
     def __init__(self):
-        self.current_block = None
+        self.blockchain = []
+        self.length = 0
 
-    def add_block(self, value):
-        data = value
-        previous_hash = self.current_block.hash if self.current_block else 0
-        self.current_block = Block(data)
+    def add_block(self, data=None):
+        """
+        Adds a block to the blockchain
+        :return: None
+        """
+
+        # Edge case
+        if data is None:
+            print("Can't add block without data")
+            return
+
+        # If we're adding the first block
+        if self.length == 0:
+            block = Block(data, 0)
+        else:
+            block = Block(data, self.blockchain[self.length - 1].hash)
+
+        self.blockchain.append(block)
+        self.length += 1
+
+    def __repr__(self):
+
+        # Edge case
+        if len(self.blockchain) == 0:
+            return "Blockchain is empty"
+
+        s = ''
+        for i in range(len(self.blockchain)):
+            s += "Block " + str(i) + "\n"
+            s += str(self.blockchain[i]) + "\n"
+        return s
 
 
-BlockChain = Blockchain()
+blockchain = BlockChain()
 
-print(BlockChain.current_block)
+# Edge test cases
+print(blockchain)
+blockchain.add_block()
+print()
 
-BlockChain.add_block(1)
-print(BlockChain.current_block)
-
-BlockChain.add_block(2)
-print(BlockChain.current_block)
-
-BlockChain.add_block(3)
-print(BlockChain.current_block)
-
-BlockChain.add_block(4)
-print(BlockChain.current_block)
-
-BlockChain.add_block(5)
-print(BlockChain.current_block)
-
-BlockChain.add_block(6)
-print(BlockChain.current_block)
-
-BlockChain.add_block(7)
-print(BlockChain.current_block)
-
-BlockChain.add_block(8)
-print(BlockChain.current_block)
-
-BlockChain.add_block(9)
-print(BlockChain.current_block)
-
-BlockChain.add_block(10.0)
-print(BlockChain.current_block)
-
-BlockChain.add_block('Aabra ka Dabra')
-print(BlockChain.current_block)
+# Test cases
+# Adding 1st block - Test Case 1
+blockchain.add_block("This is block 1")
+# Adding 1st block - Test Case 2
+blockchain.add_block("This is block 2")
+# Adding 1st block - Test Case 3
+blockchain.add_block("This is block 3")
+print(blockchain)
